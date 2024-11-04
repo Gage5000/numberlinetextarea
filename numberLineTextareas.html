@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>354345345345347565678</title>
+<link rel="stylesheet" type="text/css" href="lineStyle.css"> 
+<script src="jsline.js"></script>
+</head>
+<body>
+<div class="main">
+<div class="container">
+    <div id="lineNumbers" class="containerLines"></div>
+    <textarea spellcheck="false" placeholder="place HTML Here" id="textarea" class="containerTextarea"></textarea>
+	<div class="containerLines2"></div>
+    <textarea id="cssInput" spellcheck="false" placeholder="place CSS Here" class="containerTextarea"></textarea>
+</div>
+<button onclick="displayHTML()">Display Your Website</button> 
+<div id="htmlOutput" class="output"></div>
+</div>
+<script>
+function displayHTML() {
+const htmlContent = document.getElementById('textarea').value;
+const cssContent = document.getElementById('cssInput').value;
+let styleElement = document.getElementById('customStyle');
+if (!styleElement) {
+   styleElement = document.createElement('style');
+   styleElement.id = 'customStyle';
+   document.head.appendChild(styleElement);
+}
+styleElement.innerHTML = `#htmlOutput { ${cssContent} }`;
+document.getElementById('htmlOutput').innerHTML = htmlContent;
+}
+</script>  
+</body>
+</html>
